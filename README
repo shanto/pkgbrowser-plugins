@@ -1,0 +1,9 @@
+How to use these plug-in with PkgBrowser?
+----------------------------------------
+Just import the plugin files after initializing the window. Assuming the plugins files are under lib/plugins:
+# put these lines after app.window().setup()
+plugpath = os.path.join(os.path.dirname(__file__), 'plugins')
+import imp
+for module in [file for file in os.listdir(plugpath) if file[-2:] == 'py']:
+    try: imp.load_module(module[:-3], *imp.find_module(module[:-3], [plugpath]))
+    except: pass

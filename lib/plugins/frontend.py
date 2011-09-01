@@ -1,6 +1,6 @@
 # Copyleft (c) 2011 Shanto. No Rights Reserved.
 
-# How to plug it into PkgBrowser?
+# How to use this plug-in with PkgBrowser?
 # Just import it after initializing the window. Assuming this file is under lib/plugins:
 # plugpath = os.path.join(os.path.dirname(__file__), 'plugins')
 # import imp
