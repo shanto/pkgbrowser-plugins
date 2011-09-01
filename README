@@ -1,6 +1,6 @@
-How to use these plug-in with PkgBrowser?
+How to use these plug-ins with PkgBrowser?
 ----------------------------------------
-Just import the plugin files after initializing the window. Assuming the plugins files are under lib/plugins:
+Just import the plug-in files after initializing the window. Assuming the plugins files are under lib/plugins:
 # put these lines after app.window().setup()
 plugpath = os.path.join(os.path.dirname(__file__), 'plugins')
 import imp
