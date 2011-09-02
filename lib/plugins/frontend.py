@@ -10,7 +10,7 @@
 
 import os
 from PyQt4.QtCore import Qt, SIGNAL, SLOT
-from PyQt4.QtGui import QApplication, QMenu, QIcon, QAction
+from PyQt4.QtGui import qApp, QApplication, QMenu, QIcon, QAction
 from lib.window import Window
 from lib.enum import State
 
@@ -115,7 +115,9 @@ class Pacman(Frontend):
     exe = '/usr/bin/pacman'
 
 try: # find the main Window object
-    Frontend.window, = [w for w in QApplication.topLevelWidgets() if w.__class__ == Window]
+    Frontend.window = qApp.window()
+    if Frontend.window == None:
+        raise
 except:
     raise RuntimeError("Unable to find parent window")
 Frontend.window.packages.setContextMenuPolicy(Qt.CustomContextMenu) # patch packages widget
